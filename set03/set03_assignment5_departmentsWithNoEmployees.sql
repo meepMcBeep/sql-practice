@@ -6,5 +6,4 @@ SELECT
 FROM departments AS d
 LEFT JOIN employee_departments AS ed
     ON d.id = ed.department_id
-GROUP BY d.department_name
-HAVING COUNT(ed.employee_id) = 0;
+WHERE ed.employee_id IS NULL;
